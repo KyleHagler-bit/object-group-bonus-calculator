@@ -69,7 +69,7 @@ employees.forEach((element) => {
    } else if (bonusPerc > 0.13) {
       bonusPerc = 0.13;
    }
-   console.log(bonusPerc);
+   
    totalBonus = bonusRounder(element.annualSalary, bonusPerc);
    totalCompensation = totalMoney(element.annualSalary, totalBonus);
 
@@ -82,16 +82,13 @@ employees.forEach((element) => {
    console.log(newObj);
    $("#employees").append(
       "<li>" +
-         "Name: " +
-         newObj.name +
-         " Bonus Percentage (as decimal): " +
-         newObj.bonusPercentage +
-         " Total Bonus " +
-         newObj.bonusTotal +
-         " Total Compensation: $" +
-         newObj.compensationTotal +
-         "</li>"
-   );
+         "Name: " + newObj.name + '<br />' + 
+         " Bonus Percentage: " + newObj.bonusPercentage*100 + "%" + '<br />' + 
+         " Total Bonus: $" + newObj.bonusTotal + '<br />' + 
+         " Total Compensation: $" + newObj.compensationTotal + '<br />' + '<br />' +
+         "</li>");
+         
+   console.log('\n');
 });
 
 //  let newObj = {};
